@@ -1,8 +1,8 @@
-# forge--offline-pdf-edit2D
+# forge-offline-pdf-edit2D
 
 using Forge Viewer API with offline capabilities. This is testing the edit2D extension and calculating the length og polygons.
 
-offline-pdf-markup DEMO: COMING SOON!
+offline-pdf-markup DEMO: [https://elated-brown-a54e18.netlify.app/](https://elated-brown-a54e18.netlify.app/)
 
 Piggybacking off this demo to get the pdfs into forge but this code is using Edit2D
 Blog post: [https://forge.autodesk.com/blog/fast-pdf-viewingmarkup-inside-forge-viewer](https://forge.autodesk.com/blog/fast-pdf-viewingmarkup-inside-forge-viewer)
