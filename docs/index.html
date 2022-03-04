@@ -23,11 +23,11 @@
       <div class="container">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <img class="navbar-img" width="140" src="logo.png" />
+            <img class="navbar-img" width="140" src="kelarlogo.jpg" />
           </li>
           <li class="navbar-item">
             <button
-              onClick="initializeViewer('pdfs/qcad1.pdf')"
+              onClick="initializeViewer('pdfs/3bed.pdf')"
               class="navbar-button button-primary"
             >
               floor1.pdf
@@ -159,12 +159,17 @@
   function logMeasurements() {
     edit2d = NOP_VIEWER.loadedExtensions["Autodesk.Edit2D"];
 
-    // var layer = edit2d.defaultContext.layer;
-    // var unitHandler = edit2d.defaultContext.unitHandler;
-
     var layer = edit2d.defaultContext.layer;
     var unitHandler = edit2d.defaultContext.unitHandler;
     var lengthArr = [];
+
+    // shape has to exists or exit
+    var shape = edit2d.defaultContext.layer.shapes[0];
+
+    if (!shape) {
+      alert("No shapes/lines found, draw some to continue");
+      return;
+    }
 
     // Gets length of all total shapes
     var len = layer.shapes[0].getLength(unitHandler.measureTransform);
@@ -173,7 +178,6 @@
     let a = new THREE.Vector2();
     let b = new THREE.Vector2();
 
-    var shape = edit2d.defaultContext.layer.shapes[0];
     var measureTransformArr = [];
 
     shape.enumEdges((endPoint1, endPoint2, indexEndPoint1, indexEndPoint2) => {
@@ -210,6 +214,11 @@
     window.shapeLabels = [];
     var poly = layer.shapes[0];
 
+    if (!poly) {
+      alert("No shapes/lines found, draw some to continue");
+      return;
+    }
+
     var transformedUnits = this.logMeasurements();
 
     poly.enumEdges((endPoint1, endPoint2, indexEndPoint1, indexEndPoint2) => {
@@ -222,6 +231,11 @@
 
   // Use an alert to
   function generateReport() {
+    if (!layer.shapes[0]) {
+      alert("No shapes/lines found, draw some to continue");
+      return;
+    }
+
     var transformedUnits = this.logMeasurements();
     var totalUnits = 0;
     var markersNeeded = 0;

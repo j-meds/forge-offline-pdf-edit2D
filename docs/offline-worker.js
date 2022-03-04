@@ -18,8 +18,6 @@ var STATIC_URLS = [
   "https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/style.min.css",
   "https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Regular.woff2",
 
-  "/pdfs/qcad1.pdf",
-  "/pdfs/qcad3.pdf",
   "/pdfs/wood.pdf",
 ];
 

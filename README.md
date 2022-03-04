@@ -1,4 +1,4 @@
-# offline-pdf-markup
+# forge--offline-pdf-edit2D
 
 using Forge Viewer API with offline capabilities. This is testing the edit2D extension and calculating the length og polygons.
 
